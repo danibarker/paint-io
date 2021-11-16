@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node back-end/server.js"
+    "start": "node back-end/server.js",
+    "build": "cd front-end && npm install && npm run build && cd .."
   },
   "author": "",
   "license": "ISC",
