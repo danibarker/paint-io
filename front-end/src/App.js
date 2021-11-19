@@ -3,6 +3,13 @@ import "./App.css";
 import { useRef, useState } from "react";
 import ColorSelector from "./ColorSelector";
 import BrushSelector from "./BrushSelector";
+import socketIOClient from "socket.io-client"
+
+// *** Change to process.env.PORT || 5000?
+let socket = socketIOClient(`http://localhost:5000`)
+socket.on("connect", () => {
+  console.log(`Connected with id: ${socket.id}`)
+})
 
 function App() {
   const canvasRef = useRef(null);
