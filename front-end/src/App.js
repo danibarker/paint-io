@@ -11,7 +11,6 @@ function App() {
     const [mouseDown, setMouseDown] = useState(false);
     const [color, setColor] = useState("blue");
     const [brushSize, setBrushSize] = useState(10);
-    const [loadedImage, setLoadedImage] = useState();
     const [id, setId] = useState();
     function getMousePosition(event) {
         let canvas = canvasRef.current;
@@ -66,9 +65,6 @@ function App() {
             <button
                 onClick={async () => {
                     const image = await getImageById(id);
-                    setLoadedImage(image);
-                    console.log(image);
-                    console.log(image.image.data.toString("base64"));
                     let canvasImage = new Image();
                     canvasImage.src = `data:image/jpeg;base64,${Buffer.from(
                         image.image.data
