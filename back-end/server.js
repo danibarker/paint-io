@@ -15,7 +15,13 @@ io.on("connection", (socket) => {
     const { roomId, username } = socket.handshake.query;
     socket.join(roomId);
 
-socket.on("disconnect", () => {
+    // Data??
+    socket.on("drawing", (data) => {
+        console.log("Drawing...")
+        socket.broadcast.emit('drawing', data)
+    })
+
+    socket.on("disconnect", () => {
         socket.leave(roomId);
     });
 })
