@@ -1,4 +1,4 @@
-const BrushSelector = ({ setBrush }) => {
+const BrushSelector = ({ setBrushSize }) => {
   return (
     <div
       style={{ display: "flex", alignItems: "center" }}
@@ -8,7 +8,7 @@ const BrushSelector = ({ setBrush }) => {
         type="range"
         min="1"
         max="10"
-        onChange={(e) => setBrush(e.target.value)}
+        onChange={(e) => setBrushSize(e.target.value)}
       />
     </div>
   );
