@@ -1,219 +1,222 @@
-@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Balsamiq+Sans:wght@400;700&family=Bubblegum+Sans&family=Cabin+Sketch:wght@400;700&family=Gaegu:wght@400;700&family=Indie+Flower&family=Lato:wght@400;700&family=Mali:wght@400;700&family=Nunito:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Balsamiq+Sans:wght@400;700&family=Bubblegum+Sans&family=Cabin+Sketch:wght@400;700&family=Gaegu:wght@400;700&family=Indie+Flower&family=Lato:wght@400;700&family=Mali:wght@400;700&family=Nunito:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
 :root {
-  --brightGreen: #36fd00;
-  --almostBlack: #130705;
-  --lightPink: #fc84ff;
-  --brightPink: #c73ac9;
-  --darkPink: #350200;
-  --white: #ffffff;
+    --brightGreen: #36fd00;
+    --almostBlack: #130705;
+    --lightPink: #fc84ff;
+    --brightPink: #c73ac9;
+    --darkPink: #350200;
+    --white: #ffffff;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-/* font-family: 'Raleway', sans-serif; */
-/* font-family: 'Roboto', sans-serif; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
 }
 
 body {
-  background-color: var(--almostBlack);
-  
+    background-color: var(--almostBlack);
 }
 
 button {
-  padding: 10px;
-  border-radius: 20px;
-  background-color: var(--brightPink);
-  color: var(--almostBlack);
-  border: none;
-  font-size: 1.25rem;
-  font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--brightPink);
+    color: var(--almostBlack);
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 button:hover {
-  background-color: var(--lightPink);
+    background-color: var(--lightPink);
 }
 
 canvas {
-  border: 5px solid var(--brightGreen);
-  background-color: var(--white);
-  margin: 5px auto 15px auto;
+    border: 5px solid var(--brightGreen);
+    background-color: var(--white);
+    margin: 5px auto 15px auto;
 }
 
 h1 {
-  color: var(--brightGreen);
-  font-size: 6rem;
-  padding-left: 30px;
-  /* font-family: 'Balsamiq Sans', cursive; */
-  /* font-family: 'Bubblegum Sans', cursive; */
-  font-family: 'Cabin Sketch', cursive;
-  /* font-family: 'Gaegu', cursive; */
-  /* font-family: 'Mali', cursive; */
+    color: var(--brightGreen);
+    font-size: 6rem;
+    padding-left: 30px;
+    /* font-family: 'Balsamiq Sans', cursive; */
+    /* font-family: 'Bubblegum Sans', cursive; */
+    font-family: "Cabin Sketch", cursive;
+    /* font-family: 'Gaegu', cursive; */
+    /* font-family: 'Mali', cursive; */
 }
 
 input {
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  font-size: 1.25rem;
-  font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .app {
-  display: grid;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  align-items: center;
- }
- 
-.brush-selector {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
 }
-  
+
+.brush-selector {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
 .brush-selector p,
 .color-selector p {
-  padding: 0;
-  color: var(--brightPink);
-  font-size: 1.25rem;
-  font-weight: bold;
+    padding: 0;
+    color: var(--brightPink);
+    font-size: 1.25rem;
+    font-weight: bold;
 }
-  
+
 .color-and-brush-selector {
-  display: flex;
-  height: 100%;
-  width: 600px;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
+    display: flex;
+    height: 100%;
+    width: 600px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
 }
 
 .color-selector {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  height: 100%;
-  align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 100%;
+    align-items: center;
 }
 
 .color-selector input {
-  padding: 1px;
-  height: 30px;
-  width: 30px;
-  border-radius: 5px;
+    padding: 1px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
 }
 
 .header {
-  width: 100%
+    width: 100%;
 }
 
 .id-input-and-button button {
-  border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .id-input-and-button input {
-  border-radius: 20px 0 0 20px;
-  width: 140px;
+    border-radius: 20px 0 0 20px;
+    width: 140px;
 }
 
 .room-input {
-  margin: 10px 0;
-  display: flex;
-  justify-content: flex-end;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .room-input input {
-  width: 200px;
-  margin-left: 100px;
-  margin-top: 30px;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 30px;
 }
 
 .save-clear-get-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 600px;
-  margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: auto;
 }
 
 .save-clear-get-buttons button {
-  margin: 1px;
+    margin: 1px;
 }
 
 .title-and-mascot {
-  display: flex;
-  height: 100%;
-  align-items: flex-start;
-  padding: 20px 0;
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    padding: 20px 0;
 }
 
 /********************************* MASCOT *********************************/
 .paintbrush-container {
-  position: relative;
-  width: 50px;
-  height: 100%;
+    position: relative;
+    width: 50px;
+    height: 100%;
 }
 
 .brush {
-  background-color: var(--brightGreen);
-  height: 50px;
-  width: 50px;
-  border-radius: 0 0 50px 50px;
-  position: absolute;
-  top: 0;
-  left: 0;
+    background-color: var(--brightGreen);
+    height: 50px;
+    width: 50px;
+    border-radius: 0 0 50px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .handle {
-  background-color: var(--brightPink);
-  height: 50px;
-  width: 20px;
-  border-radius: 0 0 5px 5px;
-  position: absolute;
-  top: 47px;
-  left: 15px;
+    background-color: var(--brightPink);
+    height: 50px;
+    width: 20px;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    top: 47px;
+    left: 15px;
 }
 
 .left-eye,
 .right-eye {
-  background-color: white;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: 10px;
-  left: 5px;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 5px;
 }
 
 .right-eye {
-  left: 25px;
+    left: 25px;
 }
 
 .left-pupil,
 .right-pupil {
-  background-color: black;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  position: absolute;
-  top: 20px;
-  left: 13px;
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 13px;
 }
 
 .right-pupil {
-  left: 33px;
+    left: 33px;
 }
 
 .mouth {
-  background-color: var(--brightPink);
-  height: 10px;
-  width: 20px;
-  position: absolute;
-  top: 32px;
-  left: 15px;
-  border-radius: 0 0 20px 20px;
+    background-color: var(--brightPink);
+    height: 10px;
+    width: 20px;
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    border-radius: 0 0 20px 20px;
+}
+
+.logo {
+    filter: hue-rotate(261deg);
 }
