@@ -40,7 +40,7 @@ canvas {
     border: 5px solid var(--brightGreen);
     border-radius: 20px;
     background-color:#fff7e0;
-    margin: 5px auto 15px auto;
+    margin: 5px auto;
 }
 
 h1 {
@@ -158,7 +158,7 @@ input[type="color"]::-webkit-color-swatch {
     display: flex;
     height: 100%;
     align-items: flex-start;
-    padding: 40px 80px;
+    padding: 40px 80px 20px 80px;
     color: var(--brightGreen);
 }
 .title-and-mascot li,a {
