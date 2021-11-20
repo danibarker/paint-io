@@ -5,7 +5,7 @@ import { useState } from "react";
 export function Canvas(props) {
     const { canvasRef, socketRef, mouseDown, setMouseDown } = props;
     const [color, setColor] = useState("black");
-    const [brushSize, setBrushSize] = useState(1);
+    const [brushSize, setBrushSize] = useState(15);
 
     return (
         <div className="canvas-container">
