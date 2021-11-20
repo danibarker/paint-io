@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
 })
 app.use(express.json());
 
-app.use(express.static('front-end/build'))
+app.use(express.static('../front-end/build'))
 app.use("/api/images", imageRouter);
 
 server.listen(port, () => {

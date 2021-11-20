@@ -60,7 +60,8 @@ function App() {
         <div className="app">
             <div className="header">
                 <div className="title-and-mascot">
-                    <div className="paintbrush-container">
+                    <img className="logo" src="/paintio.png" />
+                    {/* <div className="paintbrush-container">
                         <div className="brush"></div>
                         <div className="handle"></div>
                         <div className="left-eye"></div>
@@ -68,60 +69,60 @@ function App() {
                         <div className="left-pupil"></div>
                         <div className="right-pupil"></div>
                         <div className="mouth"></div>
-                    </div>
+                    </div> */}
                     <h1>Paint.io</h1>
-                    <div className="room-input">
-                        <input placeholder="Enter room #"/>
-                    </div>
                 </div>
             </div>
-            <div className="color-and-brush-selector">
-                <ColorSelector setColor={setColor} />
-                <BrushSelector setBrushSize={setBrushSize} />
+
+            <div className="canvas-container">
+                <div className="color-and-brush-selector">
+                    <ColorSelector setColor={setColor} />
+                    <BrushSelector setBrushSize={setBrushSize} />
+                </div>
+                <canvas
+                    ref={canvasRef}
+                    width="600"
+                    height="600"
+                    onMouseMove={(e) => {
+                        mouseMove(e);
+                    }}
+                    onMouseDown={() => setMouseDown(true)}
+                    onMouseUp={() => setMouseDown(false)}
+                ></canvas>
             </div>
-            <canvas
-                ref={canvasRef}
-                width="600"
-                height="400"
-                onMouseMove={(e) => {
-                    mouseMove(e);
-                }}
-                onMouseDown={() => setMouseDown(true)}
-                onMouseUp={() => setMouseDown(false)}
-            ></canvas>
             <div className="save-clear-get-buttons">
-            <button
-                onClick={() => {
-                    let blob = convertCanvasToBlob(canvasRef.current);
-                    console.log(blob);
-                    sendImage(blob);
-                }}
-            >
-                Save Canvas
-            </button>
-            <button onClick={clearCanvas}>Clear Canvas</button>
-            <div className="id-input-and-button">
-            <input
-                placeholder="Enter ID"
-                value={id}
-                onChange={(e) => {
-                    setId(e.target.value);
-                }}
-            />
-            <button
-                onClick={async () => {
-                    const image = await getImageById(id);
-                    let canvasImage = new Image();
-                    canvasImage.src = `data:image/jpeg;base64,${Buffer.from(
-                        image.image.data
-                    ).toString("base64")}`;
-                    let context = canvasRef.current.getContext("2d");
-                    context.drawImage(canvasImage, 0, 0);
-                }}
-            >
-                Get Image By Id
-            </button>
-            </div>
+                <button
+                    onClick={() => {
+                        let blob = convertCanvasToBlob(canvasRef.current);
+                        console.log(blob);
+                        sendImage(blob);
+                    }}
+                >
+                    Save Canvas
+                </button>
+                <button onClick={clearCanvas}>Clear Canvas</button>
+                <div className="id-input-and-button">
+                    <input
+                        placeholder="Enter ID"
+                        value={id}
+                        onChange={(e) => {
+                            setId(e.target.value);
+                        }}
+                    />
+                    <button
+                        onClick={async () => {
+                            const image = await getImageById(id);
+                            let canvasImage = new Image();
+                            canvasImage.src = `data:image/jpeg;base64,${Buffer.from(
+                                image.image.data
+                            ).toString("base64")}`;
+                            let context = canvasRef.current.getContext("2d");
+                            context.drawImage(canvasImage, 0, 0);
+                        }}
+                    >
+                        Get Image By Id
+                    </button>
+                </div>
             </div>
         </div>
     );
