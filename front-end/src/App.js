@@ -1,38 +1,56 @@
 import "./App.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ColorSelector from "./ColorSelector";
 import BrushSelector from "./BrushSelector";
-import socketIOClient from "socket.io-client"
+import socketIOClient from "socket.io-client";
 import convertCanvasToBlob from "./imageutils/canvasToBlob";
 import { sendImage } from "./requests/posts";
 import { getImageById } from "./requests/gets";
 // *** Change to process.env.PORT || 5000? - where socket is running
-let socket = socketIOClient(`http://localhost:5000`)
-socket.on("connect", () => {
-  console.log(`Connected with id: ${socket.id}`)
-})
 
-function App(data) {
+let socket = socketIOClient(window.location.href);
+socket.on("connect", () => {
+    console.log(`Connected with id: ${socket.id}`);
+});
+
+function App() {
     const [id, setId] = useState();
-      
-  const canvasRef = useRef(null);
-  const [mouseDown, setMouseDown] = useState(false);
-  const [color, setColor] = useState("blue");
-  const [brush, setBrush] = useState(10);
-  
-  function getMousePosition(event) {
-    let canvas = canvasRef.current;
-    let rect = canvas.getBoundingClientRect();
-    let x = event.clientX - rect.left;
-    let y = event.clientY - rect.top;
-    // console.log("Coordinate x: " + x, "Coordinate y: " + y, mouseDown);
-    if (mouseDown) {
-      let ctx = canvas.getContext("2d");
-      ctx.beginPath();
-      ctx.arc(x, y, brush, 0, 2 * Math.PI);
-      ctx.fillStyle = color;
-      ctx.fill();
-      socket.emit('drawing', data)
+
+    const canvasRef = useRef(null);
+    const [mouseDown, setMouseDown] = useState(false);
+    const [color, setColor] = useState("blue");
+    const [brushSize, setBrushSize] = useState(10);
+    useEffect(() => {
+        socket.on("drawing", (data) => {
+            let canvas = canvasRef.current;
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(data.x, data.y, data.brushSize, 0, 2 * Math.PI);
+            ctx.fillStyle = data.color;
+            ctx.fill();
+        });
+    }, []);
+    function mouseMove(event) {
+        let canvas = canvasRef.current;
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
+        // console.log("Coordinate x: " + x, "Coordinate y: " + y, mouseDown);
+        if (mouseDown) {
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(x, y, brushSize, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+            const data = {
+                x: x,
+                y: y,
+                color: color,
+                brushSize: brushSize,
+          
+            };
+            socket.emit("drawing", data);
+        }
     }
     return (
         <div
@@ -47,12 +65,15 @@ function App(data) {
                 <ColorSelector setColor={setColor} />
                 <BrushSelector setBrushSize={setBrushSize} />
             </div>
+            <input />
             <canvas
                 ref={canvasRef}
                 width="600"
                 height="400"
                 style={{ border: "1px solid red" }}
-                onMouseMove={(e) => getMousePosition(e)}
+                onMouseMove={(e) => {
+                    mouseMove(e);
+                }}
                 onMouseDown={() => setMouseDown(true)}
                 onMouseUp={() => setMouseDown(false)}
             ></canvas>

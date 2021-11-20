@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
     // Data??
     socket.on("drawing", (data) => {
-        console.log("Drawing...")
+        console.log(data)
         socket.broadcast.emit('drawing', data)
     })
 
