@@ -89,7 +89,7 @@ function App() {
                 onMouseDown={() => setMouseDown(true)}
                 onMouseUp={() => setMouseDown(false)}
             ></canvas>
-            <div className="save-and-get-buttons">
+            <div className="save-clear-get-buttons">
             <button
                 onClick={() => {
                     let blob = convertCanvasToBlob(canvasRef.current);

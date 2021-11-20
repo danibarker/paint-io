@@ -118,6 +118,7 @@ input {
 
 .id-input-and-button input {
   border-radius: 20px 0 0 20px;
+  width: 140px;
 }
 
 .room-input {
@@ -132,11 +133,15 @@ input {
   margin-top: 30px;
 }
 
-.save-and-get-buttons {
+.save-clear-get-buttons {
   display: flex;
   justify-content: space-between;
   width: 600px;
   margin: auto;
+}
+
+.save-clear-get-buttons button {
+  margin: 1px;
 }
 
 .title-and-mascot {
