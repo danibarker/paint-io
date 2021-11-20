@@ -219,4 +219,5 @@ input {
 
 .logo {
     filter: hue-rotate(261deg);
+    width: 100px;
 }
