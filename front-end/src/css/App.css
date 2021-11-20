@@ -49,19 +49,10 @@ h1 {
     padding-left: 30px;
     /* font-family: 'Balsamiq Sans', cursive; */
     /* font-family: 'Bubblegum Sans', cursive; */
-    font-family: "Cabin Sketch", cursive;
-    align-self: center;
-
     /* font-family: 'Gaegu', cursive; */
     /* font-family: 'Mali', cursive; */
-}
-
-input {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-family: "Cabin Sketch", cursive;
+    align-self: center;
 }
 
 .app {
@@ -120,6 +111,14 @@ input[type="color"]::-webkit-color-swatch {
 
 .header {
     width: 100%;
+}
+
+.id-input-and-button input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .id-input-and-button button {
@@ -261,6 +260,10 @@ input[type="color"]::-webkit-color-swatch {
     height: 50px;
     margin: 1px;
     border-radius: 50%;
+}
+
+.color-option input {
+    border: none;
 }
 
 .color1 {
