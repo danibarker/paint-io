@@ -46,11 +46,16 @@ function App() {
                 y: y,
                 color: color,
                 brushSize: brushSize,
-          
             };
             socket.emit("drawing", data);
         }
     }
+    const clearCanvas = () => {
+        let canvas = canvasRef.current;
+
+        let ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    };
     return (
         <div
             className="App"
@@ -85,6 +90,7 @@ function App() {
             >
                 Save Canvas
             </button>
+            <button onClick={clearCanvas}>Clear Canvas</button>
             <input
                 value={id}
                 onChange={(e) => {
