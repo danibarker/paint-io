@@ -57,30 +57,39 @@ function App() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
     return (
-        <div
-            className="App"
-            style={{
-                display: "grid",
-                flexDirection: "column",
-                justifyContent: "center",
-            }}
-        >
-            <div>
+        <div className="app">
+            <div className="header">
+                <div className="title-and-mascot">
+                    <div className="paintbrush-container">
+                        <div className="brush"></div>
+                        <div className="handle"></div>
+                        <div className="left-eye"></div>
+                        <div className="right-eye"></div>
+                        <div className="left-pupil"></div>
+                        <div className="right-pupil"></div>
+                        <div className="mouth"></div>
+                    </div>
+                    <h1>Paint.io</h1>
+                    <div className="room-input">
+                        <input placeholder="Enter room #"/>
+                    </div>
+                </div>
+            </div>
+            <div className="color-and-brush-selector">
                 <ColorSelector setColor={setColor} />
                 <BrushSelector setBrushSize={setBrushSize} />
             </div>
-            <input />
             <canvas
                 ref={canvasRef}
                 width="600"
                 height="400"
-                style={{ border: "1px solid red" }}
                 onMouseMove={(e) => {
                     mouseMove(e);
                 }}
                 onMouseDown={() => setMouseDown(true)}
                 onMouseUp={() => setMouseDown(false)}
             ></canvas>
+            <div className="save-and-get-buttons">
             <button
                 onClick={() => {
                     let blob = convertCanvasToBlob(canvasRef.current);
@@ -91,7 +100,9 @@ function App() {
                 Save Canvas
             </button>
             <button onClick={clearCanvas}>Clear Canvas</button>
+            <div className="id-input-and-button">
             <input
+                placeholder="Enter ID"
                 value={id}
                 onChange={(e) => {
                     setId(e.target.value);
@@ -110,6 +121,8 @@ function App() {
             >
                 Get Image By Id
             </button>
+            </div>
+            </div>
         </div>
     );
 }
