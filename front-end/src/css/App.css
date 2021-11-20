@@ -38,6 +38,7 @@ button:hover {
 
 canvas {
     border: 5px solid var(--brightGreen);
+    border-radius: 20px;
     background-color:#fff7e0;
     margin: 5px auto 15px auto;
 }
@@ -72,13 +73,14 @@ input {
 
 .brush-selector {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     align-items: center;
 }
 
 .brush-selector p,
 .color-selector p {
     padding: 0;
+    margin-right: 10px;
     color: var(--brightPink);
     font-size: 1.25rem;
     font-weight: bold;
@@ -86,16 +88,17 @@ input {
 
 .color-and-brush-selector {
     display: flex;
+    flex-direction: column-reverse;
     height: 100%;
     width: 600px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin: auto;
 }
 
 .color-selector {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     align-items: center;
     height: 100%;
     align-items: center;
@@ -103,9 +106,16 @@ input {
 
 .color-selector input {
     padding: 1px;
-    height: 30px;
+    height: 25px;
     width: 30px;
-    border-radius: 5px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
 }
 
 .header {
@@ -165,7 +175,7 @@ input {
     align-self: center;
 }
 /********************************* MASCOT *********************************/
-.paintbrush-container {
+/* .paintbrush-container {
     position: relative;
     width: 50px;
     height: 100%;
@@ -229,9 +239,69 @@ input {
     top: 32px;
     left: 15px;
     border-radius: 0 0 20px 20px;
-}
+} */
 
 .logo {
     filter: hue-rotate(261deg);
-    width: 100px;
+    /* width: 100px; */
+    width: 60px;
+    margin: 0 20px 0 0;
 }
+
+
+.color-choices {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.color-option {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    margin: 1px;
+    border-radius: 50%;
+}
+
+.color1 {
+    background-color: red;
+}
+
+.color2 {
+    background-color: orange;
+}
+
+.color3 {
+    background-color: yellow;
+}
+
+.color4 {
+    background-color: green;
+}
+
+.color5 {
+    background-color: blue;
+}
+
+.color6 {
+    background-color: indigo;
+}
+
+.color7 {
+    background-color: violet;
+}
+
+.color8 {
+    background-color: black;
+}
+
+.color9 {
+    background-color: white;
+}
+
+.color10 {
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
