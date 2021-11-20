@@ -34,4 +34,13 @@ router.get("/:id", async (req, res) => {
         res.sendStatus(400);
     }
 });
+router.get('/', async (req,res)=>{
+    try {
+        const images = await Image.find()
+        res.json(images)
+    } catch (e) {
+        console.log(e.message)
+        res.sendStatus(400)
+    }
+})
 module.exports = router;

@@ -38,7 +38,7 @@ button:hover {
 
 canvas {
     border: 5px solid var(--brightGreen);
-    background-color: var(--white);
+    background-color:#fff7e0;
     margin: 5px auto 15px auto;
 }
 
@@ -49,6 +49,8 @@ h1 {
     /* font-family: 'Balsamiq Sans', cursive; */
     /* font-family: 'Bubblegum Sans', cursive; */
     font-family: "Cabin Sketch", cursive;
+    align-self: center;
+
     /* font-family: 'Gaegu', cursive; */
     /* font-family: 'Mali', cursive; */
 }
@@ -62,10 +64,9 @@ input {
 }
 
 .app {
-    display: grid;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
     align-items: center;
 }
 
@@ -147,9 +148,22 @@ input {
     display: flex;
     height: 100%;
     align-items: flex-start;
-    padding: 20px 0;
+    padding: 40px 80px;
+    color: var(--brightGreen);
 }
-
+.title-and-mascot li,a {
+    color: var(--brightGreen);
+    text-decoration: none;
+    font-size: 64px;
+    font-family: "Cabin Sketch", cursive;
+    list-style: none;
+}
+.title-and-mascot ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-self: center;
+}
 /********************************* MASCOT *********************************/
 .paintbrush-container {
     position: relative;

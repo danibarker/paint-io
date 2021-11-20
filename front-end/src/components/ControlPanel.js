@@ -4,6 +4,7 @@ import { getImageById } from "../requests/gets";
 import { clearCanvas } from "../functions/mouseMove";
 
 export function ControlPanel({ canvasRef, id, setId, socketRef }) {
+   
     return (
         <div className="save-clear-get-buttons">
             <button

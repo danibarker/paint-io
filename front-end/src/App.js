@@ -1,10 +1,11 @@
-import "./App.css";
+import "./css/App.css";
 import { useRef, useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import { ControlPanel } from "./components/ControlPanel";
 import { Header } from "./components/Header";
 import { Canvas } from "./components/Canvas";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Gallery from "./components/Gallery";
 function App() {
     const [id, setId] = useState();
     const canvasRef = useRef(null);
@@ -24,28 +25,43 @@ function App() {
             ctx.fill();
         });
         socket.on("clear", () => {
-            let canvas = canvasRef.current
+            let canvas = canvasRef.current;
             let ctx = canvas.getContext("2d");
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.fillStyle = "#fff7e0";
+            ctx.rect(0, 0, canvas.width, canvas.height);
+            ctx.fill();
         });
         setSocketRef(socket);
     }, []);
 
     return (
         <div className="app">
-            <Header />
-            <Canvas
-                canvasRef={canvasRef}
-                socketRef={socketRef}
-                mouseDown={mouseDown}
-                setMouseDown={setMouseDown}
-            />
-            <ControlPanel
-                canvasRef={canvasRef}
-                socketRef={socketRef}
-                id={id}
-                setId={setId}
-            />
+            <Router>
+                <Header />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <Canvas
+                                    canvasRef={canvasRef}
+                                    socketRef={socketRef}
+                                    mouseDown={mouseDown}
+                                    setMouseDown={setMouseDown}
+                                />
+                                <ControlPanel
+                                    canvasRef={canvasRef}
+                                    socketRef={socketRef}
+                                    id={id}
+                                    setId={setId}
+                                />
+                            </>
+                        }
+                    />
+                    <Route path="/gallery" element={<Gallery />} />
+                </Routes>
+            </Router>
         </div>
     );
 }
