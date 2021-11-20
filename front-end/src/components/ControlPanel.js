@@ -1,8 +1,9 @@
 import convertCanvasToBlob from "../imageutils/canvasToBlob";
 import { sendImage } from "../requests/posts";
 import { getImageById } from "../requests/gets";
+import { clearCanvas } from "../functions/mouseMove";
 
-export function ControlPanel({ canvasRef, clearCanvas, id, setId }) {
+export function ControlPanel({ canvasRef, id, setId, socketRef }) {
     return (
         <div className="save-clear-get-buttons">
             <button
@@ -14,7 +15,7 @@ export function ControlPanel({ canvasRef, clearCanvas, id, setId }) {
             >
                 Save Canvas
             </button>
-            <button onClick={() => clearCanvas(canvasRef.current)}>
+            <button onClick={() => clearCanvas(canvasRef.current, socketRef)}>
                 Clear Canvas
             </button>
             <div className="id-input-and-button">

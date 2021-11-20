@@ -2,7 +2,6 @@ import "./App.css";
 import { useRef, useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import { ControlPanel } from "./components/ControlPanel";
-import { clearCanvas } from "./functions/mouseMove";
 import { Header } from "./components/Header";
 import { Canvas } from "./components/Canvas";
 
@@ -24,6 +23,11 @@ function App() {
             ctx.fillStyle = data.color;
             ctx.fill();
         });
+        socket.on("clear", () => {
+            let canvas = canvasRef.current
+            let ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
         setSocketRef(socket);
     }, []);
 
@@ -38,7 +42,7 @@ function App() {
             />
             <ControlPanel
                 canvasRef={canvasRef}
-                clearCanvas={clearCanvas}
+                socketRef={socketRef}
                 id={id}
                 setId={setId}
             />
@@ -47,4 +51,3 @@ function App() {
 }
 
 export default App;
-

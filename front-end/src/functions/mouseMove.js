@@ -18,8 +18,9 @@ export function mouseMove(event, canvas, socket, mouseDown, brushSize, color) {
         socket.emit("drawing", data);
     }
 }
-export const clearCanvas = (canvas) => {
+export const clearCanvas = (canvas, socket) => {
     console.log("clearing canvas");
     let ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    socket.emit('clear')
 };

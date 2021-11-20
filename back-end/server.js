@@ -22,7 +22,9 @@ io.on("connection", (socket) => {
         console.log(data)
         socket.broadcast.emit('drawing', data)
     })
-
+    socket.on('clear',()=>{
+        socket.broadcast.emit('clear')
+    })
     socket.on("disconnect", () => {
         socket.leave(roomId);
     });
