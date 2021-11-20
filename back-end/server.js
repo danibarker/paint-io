@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const http = require('http')
 const imageRouter = require("./routes/images");
-
+require('dotenv').config()
 const server = http.createServer(app)
-const port = process.env.PORT || 5000
+const port = process.env.PORT
 const options = {
     cors: {
         origin: '*',

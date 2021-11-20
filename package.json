@@ -1,19 +1,23 @@
 {
-  "name": "back-end",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node back-end/server.js",
-    "build": "cd front-end && npm install && npm run build && cd .."
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^6.0.13",
-    "multer": "^1.4.3",
-    "socket.io": "^4.4.0"
-  }
+    "name": "paint-io",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "cd back-end && npm start",
+        "install": "npm install-backend && npm install-frontend",
+        "install-backend": "cd back-end && npm install && cd ..",
+        "install-frontend": "cd fron-tend && npm install && cd ..",
+        "build": "cd front-end && npm run build && cd .."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/danibarker/paint-io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/danibarker/paint-io/issues"
+    },
+    "homepage": "https://github.com/danibarker/paint-io#readme"
 }

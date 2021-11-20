@@ -6,7 +6,6 @@ import socketIOClient from "socket.io-client";
 import convertCanvasToBlob from "./imageutils/canvasToBlob";
 import { sendImage } from "./requests/posts";
 import { getImageById } from "./requests/gets";
-// *** Change to process.env.PORT || 5000? - where socket is running
 
 let socket = socketIOClient(window.location.href);
 socket.on("connect", () => {
