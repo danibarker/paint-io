@@ -1,9 +1,7 @@
 const BrushSelector = ({ setBrushSize }) => {
   return (
-    <div
-      style={{ display: "flex", alignItems: "center" }}
-    >
-      <p style={{ padding: "20px" }}>Choose a brush size</p>
+    <div className="brush-selector">
+      <p>Choose a Brush Size</p>
       <input
         type="range"
         min="1"
