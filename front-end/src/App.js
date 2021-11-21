@@ -45,7 +45,7 @@ function App() {
                     <Route
                         path="/"
                         element={
-                            <>
+                            <div className="canvas-and-control-panel">
                                 <Canvas
                                     canvasRef={canvasRef}
                                     socketRef={socketRef}
@@ -61,7 +61,7 @@ function App() {
                                     roomId={roomId}
                                     setRoomId={setRoomId}
                                 />
-                            </>
+                            </div>
                         }
                     />
                     <Route path="/gallery" element={<Gallery />} />

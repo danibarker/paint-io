@@ -362,6 +362,10 @@ a {
 
 /********************************* SMALLER SCREENS *********************************/
 @media screen and (max-height: 1000px) {
+    canvas {
+        margin-right: 10px;
+    }
+
     .brush-selector {
         display: flex;
         flex-direction: column;
@@ -392,6 +396,11 @@ a {
         flex-direction: row-reverse;
         justify-content: flex-start;
         width: fit-content;
+        margin-top: 20px;
+    }
+
+    .canvas-and-control-panel {
+        display: flex;
     }
 
     .color-choices {
@@ -401,6 +410,27 @@ a {
     .color-selector {
         display: flex;
         flex-direction: column;
+    }
+
+    .save-clear-get-buttons {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+
+    .save-clear-get-buttons button {
+        margin-bottom: 5px;
+    }
+
+    .save-and-clear-buttons {
+        width: 250px;
+        margin: 10px;
+    }
+
+    .save-and-clear-buttons button {
+        margin: 10px;
     }
 
     .title-and-mascot {

@@ -24,6 +24,7 @@ export function ControlPanel({
     return (
         <div className="save-clear-get-buttons">
             <button
+                className="save-and-clear-buttons"
                 onClick={() => {
                     let blob = convertCanvasToBlob(canvasRef.current);
                     console.log(blob);
@@ -33,6 +34,7 @@ export function ControlPanel({
                 Save Canvas
             </button>
             <button
+                className="save-and-clear-buttons"
                 onClick={() =>
                     clearCanvas(canvasRef.current, socketRef, roomId)
                 }
