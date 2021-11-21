@@ -359,3 +359,52 @@ a {
     font-weight: bold;
     padding-top: 2px;
 }
+
+/********************************* SMALLER SCREENS *********************************/
+@media screen and (max-height: 1000px) {
+    .brush-selector {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brush-selector input {
+        transform: rotate(270deg);
+        display: flex;
+    }
+    
+    .brush-selector p {
+        margin-bottom: 65px;
+    }
+
+    .brush-selector .brush-preview {
+        margin-top: 65px;
+    }
+
+    .canvas-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .color-and-brush-selector {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        width: fit-content;
+    }
+
+    .color-choices {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .color-selector {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title-and-mascot {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+}

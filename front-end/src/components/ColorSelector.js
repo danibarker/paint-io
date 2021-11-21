@@ -5,8 +5,9 @@ const ColorSelector = ({setColor}) => {
 
     return (
         <div className="color-selector">
-            <p>Colour:</p>
-            
+            <div>
+                <p>Colour:</p>
+            </div>
             <div className="color-choices">
                 <div className="color-option color1" onClick={(e) => selectFromColorCircles(e)}></div>
                 <div className="color-option color2" onClick={(e) => selectFromColorCircles(e)}></div>

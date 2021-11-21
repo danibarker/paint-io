@@ -1,7 +1,9 @@
 const BrushSelector = ({ setBrushSize ,brushSize, color}) => {
   return (
     <div className="brush-selector">
-      <p>Brush Size:</p>
+      <div>
+        <p>Brush Size:</p>
+      </div>
       <input
         type="range"
         min="2"
