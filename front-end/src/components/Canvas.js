@@ -14,6 +14,7 @@ export function Canvas(props) {
                 <BrushSelector
                     brushSize={brushSize}
                     setBrushSize={setBrushSize}
+                    color={color}
                 />
             </div>
             <canvas

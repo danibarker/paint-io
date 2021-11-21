@@ -79,7 +79,7 @@ h1 {
 }
 
 .brush-preview div {
-    background-color: var(--white);
+    border: 1px solid var(--white);
     border-radius: 50%;
 }
 

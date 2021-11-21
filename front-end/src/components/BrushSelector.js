@@ -1,4 +1,4 @@
-const BrushSelector = ({ setBrushSize ,brushSize}) => {
+const BrushSelector = ({ setBrushSize ,brushSize, color}) => {
   return (
     <div className="brush-selector">
       <p>Brush Size:</p>
@@ -12,7 +12,7 @@ const BrushSelector = ({ setBrushSize ,brushSize}) => {
       <div className="brush-preview">
         <div style={{
           height: (brushSize*2)+"px", 
-          width: (brushSize*2)+"px"}}>
+          width: (brushSize*2)+"px", background:color}}>
         </div>
       </div>
     </div>
