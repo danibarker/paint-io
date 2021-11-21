@@ -31,12 +31,12 @@ io.on("connection", (socket) => {
     });
 });
 app.use(express.json());
+console.log(__dirname + "/../front-end/build/index.html")
 
 app.use(express.static("../front-end/build"));
 app.use("/api/images", imageRouter);
-app.use('/', (req,res) =>{
-    console.log(__dirname + "/front-end/build/index.html")
-    res.sendFile(__dirname + "/front-end/build/index.html")
+app.use('*', (req,res) =>{
+    res.sendFile(__dirname + "/../front-end/build/index.html")
 })
 server.listen(port, () => {
     console.log(`Listening on port ${port}`);
