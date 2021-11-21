@@ -17,9 +17,11 @@ const ColorSelector = ({setColor}) => {
                 <div className="color-option color7" onClick={(e) => selectFromColorCircles(e)}></div>
                 <div className="color-option color8" onClick={(e) => selectFromColorCircles(e)}></div>
                 <div className="color-option color9" onClick={(e) => selectFromColorCircles(e)}></div>
-                <div className="color-option color10">
-                    More
-                    <input type="color" onChange={e=>setColor(e.target.value)}/>
+                <div className="color-selector-container">
+                    <input 
+                        className="color-option color10" type="color" 
+                        onChange={e=>setColor(e.target.value)}/>
+                    <div className="color-selector-label">More</div>
                 </div>
             </div>
         </div>

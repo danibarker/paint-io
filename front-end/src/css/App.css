@@ -117,9 +117,12 @@ h1 {
 }
 
 .color-selector input {
-    padding: 1px;
-    height: 25px;
-    width: 30px;
+    width: 50px;
+    height: 50px;
+    margin: 1px;
+    padding: 1.5px;
+    border-radius: 50%;
+    
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
@@ -128,7 +131,27 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 input[type="color"]::-webkit-color-swatch {
     border: none;
+    border-radius: 50%;
 }
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    height: 7px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff; 
+  }
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--text-color);
+    border: 1px solid #bdc3c7;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 
 .header {
     width: 100%;
@@ -268,7 +291,6 @@ a {
 }
 
 .color-option {
-    background-color: white;
     width: 50px;
     height: 50px;
     margin: 1px;
@@ -279,6 +301,21 @@ a {
 .color-option input {
     border: none;
 }
+
+.color-selector-container {
+    position: relative;
+}
+
+.color-selector-label {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    font-weight: bold;
+}
+
 
 .color1 {
     background-color: red;
