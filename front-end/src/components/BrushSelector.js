@@ -9,6 +9,12 @@ const BrushSelector = ({ setBrushSize ,brushSize}) => {
         onChange={(e) => setBrushSize(e.target.value)}
         value={brushSize}
       />
+      <div className="brush-preview">
+        <div style={{
+          height: (brushSize*2)+"px", 
+          width: (brushSize*2)+"px"}}>
+        </div>
+      </div>
     </div>
   );
 };
