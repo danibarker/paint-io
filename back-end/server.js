@@ -35,7 +35,8 @@ app.use(express.json());
 app.use(express.static("../front-end/build"));
 app.use("/api/images", imageRouter);
 app.use('/', (req,res) =>{
-    res.sendFile(__dirname + "/../front-end/build/index.html")
+    console.log(__dirname + "/front-end/build/index.html")
+    res.sendFile(__dirname + "/front-end/build/index.html")
 })
 server.listen(port, () => {
     console.log(`Listening on port ${port}`);
