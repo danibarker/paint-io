@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Balsamiq+Sans:wght@400;700&family=Bubblegum+Sans&family=Cabin+Sketch:wght@400;700&family=Gaegu:wght@400;700&family=Indie+Flower&family=Lato:wght@400;700&family=Mali:wght@400;700&family=Nunito:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap");
 
 :root {
-    --brightGreen: #36fd00;
-    --almostBlack: #130705;
-    --lightPink: #fc84ff;
-    --brightPink: #c73ac9;
-    --darkPink: #350200;
-    --white: #ffffff;
+    --text-color: #00adfd;
+    --background: #001d30;
+    --button-hover: #84ceff;
+    --button-color: #3a90c9;
+    --white: #fff7e0;
 }
 
 * {
@@ -19,14 +18,14 @@
 }
 
 body {
-    background-color: var(--almostBlack);
+    background-color: var(--background);
 }
 
 button {
     padding: 10px;
     border-radius: 20px;
-    background-color: var(--brightPink);
-    color: var(--almostBlack);
+    background-color: var(--button-color);
+    color: var(--background);
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
@@ -34,26 +33,26 @@ button {
 }
 
 button:hover {
-    background-color: var(--lightPink);
+    background-color: var(--button-hover);
 }
 button:disabled:hover {
-    background-color: var(--brightGreen);
+    background-color: var(--text-color);
 }
 button:disabled {
     cursor: unset;
-    background-color: var(--brightGreen);
+    background-color: var(--text-color);
 
 }
 
 canvas {
-    border: 5px solid var(--brightGreen);
+    border: 5px solid var(--text-color);
     border-radius: 20px;
     background-color: #fff7e0;
     margin: 5px auto;
 }
 
 h1 {
-    color: var(--brightGreen);
+    color: var(--text-color);
     font-size: 6rem;
     padding-left: 30px;
     /* font-family: 'Balsamiq Sans', cursive; */
@@ -94,7 +93,7 @@ h1 {
 .color-selector p {
     padding: 0;
     margin-right: 10px;
-    color: var(--brightPink);
+    color: var(--button-color);
     font-size: 1.25rem;
     font-weight: bold;
 }
@@ -141,6 +140,7 @@ input[type="color"]::-webkit-color-swatch {
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
+    background-color: var(--white);
 }
 
 .room-right {
@@ -152,17 +152,7 @@ input[type="color"]::-webkit-color-swatch {
     width: 140px;
 }
 
-.room-input {
-    margin: 10px 0;
-    display: flex;
-    justify-content: flex-end;
-}
 
-.room-input input {
-    width: 200px;
-    margin-left: 100px;
-    margin-top: 30px;
-}
 
 .save-clear-get-buttons {
     display: flex;
@@ -180,11 +170,11 @@ input[type="color"]::-webkit-color-swatch {
     height: 100%;
     align-items: flex-start;
     padding: 40px 80px 20px 80px;
-    color: var(--brightGreen);
+    color: var(--text-color);
 }
 .title-and-mascot li,
 a {
-    color: var(--brightGreen);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 64px;
     font-family: "Cabin Sketch", cursive;
@@ -283,6 +273,7 @@ a {
     height: 50px;
     margin: 1px;
     border-radius: 50%;
+    border: 2px solid var(--white)
 }
 
 .color-option input {
