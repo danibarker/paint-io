@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const imageRouter = require("./routes/images");
+const path = require("path");
 require("dotenv").config();
 const server = http.createServer(app);
 const port = process.env.PORT;
@@ -15,7 +16,7 @@ const io = require("socket.io")(server, options);
 io.on("connection", (socket) => {
     console.log("IT WORKED!!! socket.id: ", socket.id);
     socket.on("join", (data, roomId) => {
-        console.log('data is', data, 'room is', roomId)
+        console.log("data is", data, "room is", roomId);
         socket.join(roomId);
         socket.to(roomId).emit("join", data);
     });
@@ -31,13 +32,13 @@ io.on("connection", (socket) => {
     });
 });
 app.use(express.json());
-console.log(__dirname + "/../front-end/build/index.html")
+console.log(path.join(__dirname, "../front-end/build/index.html"));
 
 app.use(express.static("../front-end/build"));
 app.use("/api/images", imageRouter);
-app.use('*', (req,res) =>{
-    res.sendFile(__dirname + "/../front-end/build/index.html")
-})
+app.use("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../front-end/build/index.html"));
+});
 server.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
