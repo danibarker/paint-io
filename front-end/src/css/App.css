@@ -71,6 +71,19 @@ h1 {
     align-items: center;
 }
 
+.brush-preview {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brush-preview div {
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
 .brush-selector {
     display: flex;
     flex-direction: row;
