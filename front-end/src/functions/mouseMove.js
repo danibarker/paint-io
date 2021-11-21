@@ -1,4 +1,4 @@
-export function mouseMove(event, canvas, socket, mouseDown, brushSize, color) {
+export function mouseMove(event, canvas, socket, mouseDown, brushSize, color, roomId) {
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
@@ -15,10 +15,10 @@ export function mouseMove(event, canvas, socket, mouseDown, brushSize, color) {
             color: color,
             brushSize: brushSize,
         };
-        socket.emit("drawing", data);
+        socket.emit("drawing", data, roomId);
     }
 }
-export const clearCanvas = (canvas, socket) => {
+export const clearCanvas = (canvas, socket, roomId) => {
     console.log("clearing canvas");
     let ctx = canvas.getContext("2d");
     ctx.beginPath();
@@ -26,5 +26,5 @@ export const clearCanvas = (canvas, socket) => {
     ctx.fillStyle = "#fff7e0"
     ctx.rect(0, 0, canvas.width, canvas.height);
     ctx.fill()
-    socket.emit('clear')
+    socket.emit('clear', roomId)
 };

@@ -3,7 +3,7 @@ import BrushSelector from "./BrushSelector";
 import { mouseMove } from "../functions/mouseMove";
 import { useState } from "react";
 export function Canvas(props) {
-    const { canvasRef, socketRef, mouseDown, setMouseDown } = props;
+    const { canvasRef, socketRef, mouseDown, setMouseDown, roomId } = props;
     const [color, setColor] = useState("black");
     const [brushSize, setBrushSize] = useState(15);
 
@@ -11,7 +11,10 @@ export function Canvas(props) {
         <div className="canvas-container">
             <div className="color-and-brush-selector">
                 <ColorSelector setColor={setColor} />
-                <BrushSelector brushSize={brushSize} setBrushSize={setBrushSize} />
+                <BrushSelector
+                    brushSize={brushSize}
+                    setBrushSize={setBrushSize}
+                />
             </div>
             <canvas
                 ref={canvasRef}
@@ -24,7 +27,8 @@ export function Canvas(props) {
                         socketRef,
                         mouseDown,
                         brushSize,
-                        color
+                        color,
+                        roomId
                     );
                 }}
                 onMouseDown={() => setMouseDown(true)}

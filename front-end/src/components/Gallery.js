@@ -1,16 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import '../css/Gallery.css'
-function imageToBase64(image) {
-    let reader = new FileReader();
-    let result;
-    reader.readAsDataURL(image);
-    reader.onloadend = function () {
-        var base64data = reader.result;
-        result = base64data;
-    };
-    return result;
-}
+
 export default function Gallery() {
     const [images, setImages] = useState(null);
     useEffect(() => {
@@ -22,7 +13,7 @@ export default function Gallery() {
         getGallery();
     }, []);
     return (
-        <div>
+        <div className="gallery-container">
             {images &&
                 images.map((image) => {
                     return (

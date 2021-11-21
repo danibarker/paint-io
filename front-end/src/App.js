@@ -11,6 +11,8 @@ function App() {
     const canvasRef = useRef(null);
     const [mouseDown, setMouseDown] = useState(false);
     const [socketRef, setSocketRef] = useState();
+    const [roomId, setRoomId] = useState()
+
     useEffect(() => {
         let socket = socketIOClient(window.location.href);
         socket.on("connect", () => {
@@ -49,12 +51,15 @@ function App() {
                                     socketRef={socketRef}
                                     mouseDown={mouseDown}
                                     setMouseDown={setMouseDown}
+                                    roomId={roomId}
                                 />
                                 <ControlPanel
                                     canvasRef={canvasRef}
                                     socketRef={socketRef}
                                     id={id}
                                     setId={setId}
+                                    roomId={roomId}
+                                    setRoomId={setRoomId}
                                 />
                             </>
                         }

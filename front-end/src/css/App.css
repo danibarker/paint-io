@@ -30,16 +30,25 @@ button {
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: var(--lightPink);
 }
+button:disabled:hover {
+    background-color: var(--brightGreen);
+}
+button:disabled {
+    cursor: unset;
+    background-color: var(--brightGreen);
+
+}
 
 canvas {
     border: 5px solid var(--brightGreen);
     border-radius: 20px;
-    background-color:#fff7e0;
+    background-color: #fff7e0;
     margin: 5px auto;
 }
 
@@ -102,11 +111,11 @@ h1 {
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
+    padding: 0;
 }
 
 input[type="color"]::-webkit-color-swatch {
-	border: none;
+    border: none;
 }
 
 .header {
@@ -115,17 +124,17 @@ input[type="color"]::-webkit-color-swatch {
 
 .id-input-and-button input {
     padding: 10px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
 }
 
-.id-input-and-button button {
+.room-right {
     border-radius: 0px 20px 20px 0px;
 }
 
-.id-input-and-button input {
+.room-left {
     border-radius: 20px 0 0 20px;
     width: 140px;
 }
@@ -160,7 +169,8 @@ input[type="color"]::-webkit-color-swatch {
     padding: 40px 80px 20px 80px;
     color: var(--brightGreen);
 }
-.title-and-mascot li,a {
+.title-and-mascot li,
+a {
     color: var(--brightGreen);
     text-decoration: none;
     font-size: 64px;
@@ -308,4 +318,3 @@ input[type="color"]::-webkit-color-swatch {
     font-weight: bold;
     padding-top: 2px;
 }
-
