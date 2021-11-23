@@ -194,21 +194,28 @@ input[type='range']::-webkit-slider-thumb {
     width: 100%;
 }
 
+.id-input-and-button {
+    display: flex;
+    align-items: flex-start;
+}
+
 .id-input-and-button input {
     padding: 10px;
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
     background-color: var(--white);
+    height: 50px;
 }
 
 .room-right {
     border-radius: 0px 20px 20px 0px;
+    width: 140px;
 }
 
 .room-left {
     border-radius: 20px 0 0 20px;
-    width: 135px;
+    width: 110px;
 }
 
 .save-and-clear-buttons,
@@ -400,6 +407,10 @@ a {
     
     .eraser p {
         margin: auto;
+    }
+
+    .id-input-and-button {
+        width: 250px;
     }
 
     .save-button-container {
