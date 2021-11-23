@@ -19,6 +19,7 @@ export function ControlPanel({
     const leaveRoom = () => {
         socketRef.emit("leave", roomId);
         setJoined(false);
+        setRoomId();
     };
     const displaySavedConfirmation = () => {
         setSavedConfirmationVisible(true)
@@ -76,7 +77,7 @@ export function ControlPanel({
                 <button
                     className="room-right"
                     onClick={() => {
-                        joined ? leaveRoom() : joinRoom();
+                        joined ? leaveRoom() : roomId && joinRoom();
                     }}
                 >
                     {joined ? "Leave Room " : "Join Room"}
