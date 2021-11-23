@@ -206,8 +206,11 @@ input[type='range']::-webkit-slider-thumb {
     font-weight: bold;
     background-color: var(--white);
     height: 50px;
-    margin-top: 1px;
-    margin-right: 1px;
+    margin: 1px;
+}
+
+.room-left-alert::placeholder {
+    color:blueviolet;
 }
 
 .room-right {

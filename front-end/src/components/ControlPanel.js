@@ -24,11 +24,18 @@ export function ControlPanel({
     const displaySavedConfirmation = () => {
         setSavedConfirmationVisible(true)
         setTimeout(() => {
-            setSavedConfirmationVisible(false)
-        }, 1500)
+            setSavedConfirmationVisible(false);
+        }, 1500);
+    }
+    const roomLeftAlertVisible = () => {
+        setRoomLeftClass('room-left room-left-alert');
+        setTimeout(() => {
+            setRoomLeftClass('room-left');
+        }, 500);
     }
     const [joined, setJoined] = useState(false);
     const [savedConfirmationVisibile, setSavedConfirmationVisible] = useState(false);
+    const [roomLeftClass, setRoomLeftClass] = useState('room-left');
     let notificationClass = savedConfirmationVisibile ? "notification-show" : "notification-hide";
     return (
         <div className="save-clear-get-buttons">
@@ -65,7 +72,7 @@ export function ControlPanel({
                     </button>
                 ) : (
                     <input
-                        className="room-left"
+                        className={roomLeftClass}
                         placeholder="Enter ID"
                         value={id}
                         onChange={(e) => {
@@ -77,7 +84,11 @@ export function ControlPanel({
                 <button
                     className="room-right"
                     onClick={() => {
-                        joined ? leaveRoom() : roomId && joinRoom();
+                        joined 
+                            ? leaveRoom() 
+                            : roomId 
+                                ? joinRoom() 
+                                : roomLeftAlertVisible();
                     }}
                 >
                     {joined ? "Leave Room " : "Join Room"}
