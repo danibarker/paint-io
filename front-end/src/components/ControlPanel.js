@@ -79,7 +79,7 @@ export function ControlPanel({
                         joined ? leaveRoom() : joinRoom();
                     }}
                 >
-                    {joined ? "Leave Room " : "Join room"}
+                    {joined ? "Leave Room " : "Join Room"}
                 </button>
             </div>
         </div>

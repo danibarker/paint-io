@@ -196,7 +196,6 @@ input[type='range']::-webkit-slider-thumb {
 
 .id-input-and-button input {
     padding: 10px;
-    /* border-radius: 20px; */
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
@@ -209,7 +208,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .room-left {
     border-radius: 20px 0 0 20px;
-    width: 140px;
+    width: 135px;
 }
 
 .save-and-clear-buttons,
@@ -223,6 +222,7 @@ input[type='range']::-webkit-slider-thumb {
     justify-content: space-between;
     width: 600px;
     margin: auto;
+    overflow: visible;
 }
 
 .save-clear-get-buttons button {
