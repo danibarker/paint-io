@@ -87,15 +87,27 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.brush-selector input {
+    margin: 10px 10px 10px 0px;
 }
 
 .brush-selector p,
-.color-selector p {
+.color-selector p,
+.eraser p {
     padding: 0;
     margin-right: 10px;
     color: var(--button-color);
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+.brush-size-container {
+    display: flex;
+    align-items: center;
 }
 
 .color-and-brush-selector {
@@ -152,6 +164,22 @@ input[type='range']::-webkit-slider-thumb {
     border-radius: 10px;
     cursor: pointer;
   }
+
+.eraser {
+    background-color: rgb(209, 128, 142);
+    width: 90px;
+    height: 40px;
+    display: flex;
+    transform: skewX(-20deg);
+    border-radius: 5px;
+    margin-left: 40px;
+}
+
+.eraser p {
+    color: var(--background);
+    margin: auto;
+    transform: skewX(20deg);
+}
 
 .header {
     width: 100%;
@@ -374,14 +402,20 @@ a {
     .brush-selector input {
         transform: rotate(270deg);
         display: flex;
+        margin: 10px 10px 10px 10px;
     }
     
     .brush-selector p {
+        margin: auto;
         margin-bottom: 65px;
     }
 
     .brush-selector .brush-preview {
         margin-top: 65px;
+    }
+
+    .brush-size-container {
+        flex-direction: column;
     }
 
     .canvas-container {
@@ -410,6 +444,15 @@ a {
     .color-selector {
         display: flex;
         flex-direction: column;
+    }
+
+    .eraser {
+        margin-left: 0px;
+        margin-top: 40px;
+    }
+    
+    .eraser p {
+        margin: auto;
     }
 
     .save-clear-get-buttons {
