@@ -63,6 +63,15 @@ h1 {
     align-self: center;
 }
 
+.notification-show {
+    color: yellow;
+    text-align: center;
+}
+
+.notification-hide {
+    visibility: hidden;
+}
+
 .app {
     display: flex;
     flex-direction: column;
@@ -203,7 +212,11 @@ input[type='range']::-webkit-slider-thumb {
     width: 140px;
 }
 
-
+.save-and-clear-buttons,
+.room-left, 
+.room-right {
+    height: 50px;
+}
 
 .save-clear-get-buttons {
     display: flex;
@@ -389,6 +402,11 @@ a {
         margin: auto;
     }
 
+    .save-button-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     .save-clear-get-buttons {
         display: flex;
         flex-direction: column;
@@ -400,12 +418,12 @@ a {
     .save-clear-get-buttons button {
         margin-bottom: 5px;
     }
-
+    
     .save-and-clear-buttons {
         width: 250px;
         margin: 10px;
     }
-
+    
     .save-and-clear-buttons button {
         margin: 10px;
     }

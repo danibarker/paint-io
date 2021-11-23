@@ -20,19 +20,35 @@ export function ControlPanel({
         socketRef.emit("leave", roomId);
         setJoined(false);
     };
+    const displaySavedConfirmation = () => {
+        setSavedConfirmationVisible(true)
+        setTimeout(() => {
+            setSavedConfirmationVisible(false)
+        }, 1500)
+    }
     const [joined, setJoined] = useState(false);
+    const [savedConfirmationVisibile, setSavedConfirmationVisible] = useState(false);
+    let notificationClass = savedConfirmationVisibile ? "notification-show" : "notification-hide";
     return (
         <div className="save-clear-get-buttons">
-            <button
-                className="save-and-clear-buttons"
-                onClick={() => {
-                    let blob = convertCanvasToBlob(canvasRef.current);
-                    console.log(blob);
-                    sendImage(blob);
-                }}
-            >
-                Save Canvas
-            </button>
+            <div className="save-button-container">
+                <button
+                    className="save-and-clear-buttons"
+                    onClick={() => {
+                        let blob = convertCanvasToBlob(canvasRef.current);
+                        console.log(blob);
+                        sendImage(blob);
+                        displaySavedConfirmation();
+                    }}
+                >
+                    Save Canvas
+                </button>
+                <div 
+                    className={notificationClass}
+                >
+                    <p>Saved &#10003;</p>
+                </div>
+            </div>
             <button
                 className="save-and-clear-buttons"
                 onClick={() =>
