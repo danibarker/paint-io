@@ -432,7 +432,7 @@ input[type='range']::-webkit-slider-thumb {
         flex-direction: column;
         width: fit-content;
         justify-content: flex-start;
-        margin-top: 20px;
+        margin-top: 3px;
     }
 
     .save-clear-get-buttons button {
