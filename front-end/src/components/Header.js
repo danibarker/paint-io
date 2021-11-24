@@ -8,7 +8,7 @@ export function Header() {
                 <ul>
                 <Link to="/">
 
-                    <li>Paint.io</li>
+                    <li>Paint-IO</li>
                     </Link>
                 
 
