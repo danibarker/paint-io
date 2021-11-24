@@ -51,17 +51,7 @@ canvas {
     margin: 5px auto;
 }
 
-h1 {
-    color: var(--text-color);
-    font-size: 6rem;
-    padding-left: 30px;
-    /* font-family: 'Balsamiq Sans', cursive; */
-    /* font-family: 'Bubblegum Sans', cursive; */
-    /* font-family: 'Gaegu', cursive; */
-    /* font-family: 'Mali', cursive; */
-    font-family: "Cabin Sketch", cursive;
-    align-self: center;
-}
+
 
 .notification-show {
     color: yellow;
@@ -248,13 +238,27 @@ input[type='range']::-webkit-slider-thumb {
     padding: 40px 80px 20px 80px;
     color: var(--text-color);
 }
-.title-and-mascot li,
-a {
+.title-and-mascot .header-main-text {
     color: var(--text-color);
-    text-decoration: none;
     font-size: 64px;
     font-family: "Cabin Sketch", cursive;
     list-style: none;
+    font-weight: bold;
+}
+.title-and-mascot a {
+    color: var(--text-color);
+    text-decoration: none;
+    list-style: none;
+}
+.title-and-mascot .header-main-text:hover {
+    color: var(--button-hover)
+}
+.title-and-mascot .header-tagline {
+    margin-top: -11px;
+    text-align: center;
+}
+.title-and-mascot .header-tagline p {
+    font-size: 16pt !important;
 }
 .title-and-mascot ul {
     display: flex;

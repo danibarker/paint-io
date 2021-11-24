@@ -7,14 +7,16 @@ export function Header() {
                 <img className="logo" alt="logo" src="/paintio.png" />
                 <ul>
                 <Link to="/">
-
-                    <li>Paint-IO</li>
-                    </Link>
-                
-
-                    <Link to="/gallery">
-                        <li>Gallery</li>
-                    </Link>
+                    <li>
+                        <div>
+                            <h1 className="header-main-text">Paint-IO</h1>
+                            <p className="header-tagline">Create with friends!</p>
+                        </div>
+                    </li>
+                </Link>
+                <Link to="/gallery">
+                    <li className="header-main-text">Gallery</li>
+                </Link>
                 </ul>
             </div>
         </div>
