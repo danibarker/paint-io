@@ -61,6 +61,7 @@ function App() {
                                     roomId={roomId}
                                     setRoomId={setRoomId}
                                 />
+                                <a className="instruction-link" href="https://danibarker.github.io/paintIO" target="_">About / Instructions</a>
                             </div>
                         }
                     />

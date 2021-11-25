@@ -41,7 +41,6 @@ button:disabled:hover {
 button:disabled {
     cursor: unset;
     background-color: var(--text-color);
-
 }
 
 canvas {
@@ -51,7 +50,14 @@ canvas {
     margin: 5px auto;
 }
 
-
+.instruction-link {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    color: var(--text-color);
+    font-size: 30px;
+    font-family: "Cabin Sketch";
+}
 
 .notification-show {
     color: yellow;
@@ -133,7 +139,6 @@ canvas {
     margin: 1px;
     padding: 1.5px;
     border-radius: 50%;
-    
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
@@ -145,16 +150,16 @@ input[type="color"]::-webkit-color-swatch {
     border-radius: 50%;
 }
 
-input[type=range] {
+input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
     border-radius: 8px;
     height: 7px;
     border: 1px solid #bdc3c7;
-    background-color: #fff; 
-  }
+    background-color: #fff;
+}
 
-input[type='range']::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: var(--text-color);
     border: 1px solid #bdc3c7;
@@ -162,7 +167,7 @@ input[type='range']::-webkit-slider-thumb {
     height: 20px;
     border-radius: 10px;
     cursor: pointer;
-  }
+}
 
 .eraser {
     background-color: rgb(209, 128, 142);
@@ -200,7 +205,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .room-left-alert::placeholder {
-    color:blueviolet;
+    color: blueviolet;
 }
 
 .room-right {
@@ -214,7 +219,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .save-and-clear-buttons,
-.room-left, 
+.room-left,
 .room-right {
     height: 50px;
 }
@@ -251,7 +256,7 @@ input[type='range']::-webkit-slider-thumb {
     list-style: none;
 }
 .title-and-mascot .header-main-text:hover {
-    color: var(--button-hover)
+    color: var(--button-hover);
 }
 .title-and-mascot .header-tagline {
     margin-top: -11px;
@@ -286,7 +291,7 @@ input[type='range']::-webkit-slider-thumb {
     height: 50px;
     margin: 1px;
     border-radius: 50%;
-    border: 2px solid var(--white)
+    border: 2px solid var(--white);
 }
 
 .color-option input {
@@ -306,7 +311,6 @@ input[type='range']::-webkit-slider-thumb {
     pointer-events: none;
     font-weight: bold;
 }
-
 
 .color1 {
     background-color: red;
@@ -367,7 +371,7 @@ input[type='range']::-webkit-slider-thumb {
         display: flex;
         margin: 10px 10px 10px 10px;
     }
-    
+
     .brush-selector p {
         margin: auto;
         margin-bottom: 65px;
@@ -413,7 +417,7 @@ input[type='range']::-webkit-slider-thumb {
         margin-left: 0px;
         margin-top: 40px;
     }
-    
+
     .eraser p {
         margin: auto;
     }
@@ -438,12 +442,12 @@ input[type='range']::-webkit-slider-thumb {
     .save-clear-get-buttons button {
         margin-bottom: 5px;
     }
-    
+
     .save-and-clear-buttons {
         width: 250px;
         margin: 10px;
     }
-    
+
     .save-and-clear-buttons button {
         margin: 10px;
     }
