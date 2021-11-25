@@ -44,7 +44,6 @@ export function ControlPanel({
                     className="save-and-clear-buttons"
                     onClick={() => {
                         let blob = convertCanvasToBlob(canvasRef.current);
-                        console.log(blob);
                         sendImage(blob);
                         displaySavedConfirmation();
                     }}

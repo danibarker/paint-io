@@ -27,7 +27,6 @@ router.get("/:id", async (req, res) => {
     let id = req.params.id;
     try {
         const image = await Image.findById(id);
-        console.log(image)
         res.json(image);
     } catch (e) {
         console.log(e.message)

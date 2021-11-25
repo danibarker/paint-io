@@ -2,7 +2,6 @@ export function mouseMove(event, canvas, socket, mouseDown, brushSize, color, ro
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    // console.log("Coordinate x: " + x, "Coordinate y: " + y, mouseDown);
     if (mouseDown) {
         let ctx = canvas.getContext("2d");
         ctx.beginPath();
@@ -19,7 +18,6 @@ export function mouseMove(event, canvas, socket, mouseDown, brushSize, color, ro
     }
 }
 export const clearCanvas = (canvas, socket, roomId) => {
-    console.log("clearing canvas");
     let ctx = canvas.getContext("2d");
     ctx.beginPath();
 

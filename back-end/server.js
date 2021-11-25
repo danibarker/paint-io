@@ -14,14 +14,11 @@ const options = {
 const io = require("socket.io")(server, options);
 
 io.on("connection", (socket) => {
-    console.log("IT WORKED!!! socket.id: ", socket.id);
     socket.on("join", (data, roomId) => {
-        console.log("data is", data, "room is", roomId);
         socket.join(roomId);
         socket.to(roomId).emit("join", data);
     });
     socket.on("drawing", (data, roomId) => {
-        console.log(data);
         socket.to(roomId).emit("drawing", data);
     });
     socket.on("clear", (roomId) => {
@@ -32,12 +29,10 @@ io.on("connection", (socket) => {
     });
 });
 app.use(express.json());
-console.log(path.join(__dirname, "../front-end/build/index.html"));
 
 app.use(express.static(path.join(__dirname, '../front-end/build')))
 app.use("/api/images", imageRouter);
 app.use("*", (req, res) => {
-    console.log('got here')
     res.sendFile(path.join(__dirname, "../front-end/build/index.html"));
 });
 server.listen(port, () => {

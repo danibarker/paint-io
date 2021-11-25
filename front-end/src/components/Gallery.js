@@ -8,7 +8,6 @@ export default function Gallery() {
         const getGallery = async () => {
             const response = await axios.get("/api/images");
             setImages(response.data);
-            console.log(response.data);
         };
         getGallery();
     }, []);
