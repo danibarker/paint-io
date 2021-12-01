@@ -30,7 +30,7 @@ io.on("connection", (socket) => {
 });
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../front-end/build')))
+app.use(express.static(path.join(__dirname, "../front-end/build")));
 app.use("/api/images", imageRouter);
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../front-end/build/index.html"));

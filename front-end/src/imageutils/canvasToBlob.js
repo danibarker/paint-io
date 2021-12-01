@@ -25,22 +25,13 @@ function base64ToBlob(base64, mime) {
 }
 
 function convertCanvasToBlob(img) {
-
     // convert canvas image back to a base64 image
     let jpegFile = img.toDataURL();
     // change base64 image to plain base64 data
-    let base64 = jpegFile.replace(
-        /^data:image\/(png|jpeg);base64,/,
-        ""
-    );
+    let base64 = jpegFile.replace(/^data:image\/(png|jpeg);base64,/, "");
     // convert base64 data into an jpeg image that AWS can handle
-    let jpegBlob = base64ToBlob(
-        base64,
-        "image/jpeg"
-    );
-    return jpegBlob
+    let jpegBlob = base64ToBlob(base64, "image/jpeg");
+    return jpegBlob;
 }
 
-
-
-export default convertCanvasToBlob
+export default convertCanvasToBlob;

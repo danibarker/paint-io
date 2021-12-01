@@ -22,21 +22,24 @@ export function ControlPanel({
         setRoomId();
     };
     const displaySavedConfirmation = () => {
-        setSavedConfirmationVisible(true)
+        setSavedConfirmationVisible(true);
         setTimeout(() => {
             setSavedConfirmationVisible(false);
         }, 1500);
-    }
+    };
     const roomLeftAlertVisible = () => {
-        setRoomLeftClass('room-left room-left-alert');
+        setRoomLeftClass("room-left room-left-alert");
         setTimeout(() => {
-            setRoomLeftClass('room-left');
+            setRoomLeftClass("room-left");
         }, 500);
-    }
+    };
     const [joined, setJoined] = useState(false);
-    const [savedConfirmationVisibile, setSavedConfirmationVisible] = useState(false);
-    const [roomLeftClass, setRoomLeftClass] = useState('room-left');
-    let notificationClass = savedConfirmationVisibile ? "notification-show" : "notification-hide";
+    const [savedConfirmationVisibile, setSavedConfirmationVisible] =
+        useState(false);
+    const [roomLeftClass, setRoomLeftClass] = useState("room-left");
+    let notificationClass = savedConfirmationVisibile
+        ? "notification-show"
+        : "notification-hide";
     return (
         <div className="save-clear-get-buttons">
             <div className="save-button-container">
@@ -50,9 +53,7 @@ export function ControlPanel({
                 >
                     Save Canvas
                 </button>
-                <div 
-                    className={notificationClass}
-                >
+                <div className={notificationClass}>
                     <p>Saved &#10003;</p>
                 </div>
             </div>
@@ -83,11 +84,11 @@ export function ControlPanel({
                 <button
                     className="room-right"
                     onClick={() => {
-                        joined 
-                            ? leaveRoom() 
-                            : roomId 
-                                ? joinRoom() 
-                                : roomLeftAlertVisible();
+                        joined
+                            ? leaveRoom()
+                            : roomId
+                            ? joinRoom()
+                            : roomLeftAlertVisible();
                     }}
                 >
                     {joined ? "Leave Room " : "Join Room"}

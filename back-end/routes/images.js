@@ -29,17 +29,17 @@ router.get("/:id", async (req, res) => {
         const image = await Image.findById(id);
         res.json(image);
     } catch (e) {
-        console.log(e.message)
+        console.log(e.message);
         res.sendStatus(400);
     }
 });
-router.get('/', async (req,res)=>{
+router.get("/", async (req, res) => {
     try {
-        const images = await Image.find()
-        res.json(images)
+        const images = await Image.find();
+        res.json(images);
     } catch (e) {
-        console.log(e.message)
-        res.sendStatus(400)
+        console.log(e.message);
+        res.sendStatus(400);
     }
-})
+});
 module.exports = router;

@@ -11,7 +11,7 @@ function App() {
     const canvasRef = useRef(null);
     const [mouseDown, setMouseDown] = useState(false);
     const [socketRef, setSocketRef] = useState();
-    const [roomId, setRoomId] = useState()
+    const [roomId, setRoomId] = useState();
 
     useEffect(() => {
         let socket = socketIOClient(window.location.href);
@@ -61,7 +61,13 @@ function App() {
                                     roomId={roomId}
                                     setRoomId={setRoomId}
                                 />
-                                <a className="instruction-link" href="https://danibarker.github.io/paintIO" target="_">About / Instructions</a>
+                                <a
+                                    className="instruction-link"
+                                    href="https://danibarker.github.io/paintIO"
+                                    target="_"
+                                >
+                                    About / Instructions
+                                </a>
                             </div>
                         }
                     />

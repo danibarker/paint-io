@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import '../css/Gallery.css'
+import "../css/Gallery.css";
 
 export default function Gallery() {
     const [images, setImages] = useState(null);
