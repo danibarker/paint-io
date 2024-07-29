@@ -1,0 +1,12 @@
+.gallery-image {
+    background-color: #fff7e0;
+    border: 1px black solid;
+    width: 200px;
+}
+
+.gallery-container {
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 50px;
+}

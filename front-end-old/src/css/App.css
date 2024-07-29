@@ -1,0 +1,460 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Balsamiq+Sans:wght@400;700&family=Bubblegum+Sans&family=Cabin+Sketch:wght@400;700&family=Gaegu:wght@400;700&family=Indie+Flower&family=Lato:wght@400;700&family=Mali:wght@400;700&family=Nunito:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+:root {
+    --text-color: #00adfd;
+    --background: #001d30;
+    --button-hover: #84ceff;
+    --button-color: #3a90c9;
+    --white: #fff7e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+body {
+    background-color: var(--background);
+}
+
+button {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--button-color);
+    color: var(--background);
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+button:disabled:hover {
+    background-color: var(--text-color);
+}
+button:disabled {
+    cursor: unset;
+    background-color: var(--text-color);
+}
+
+canvas {
+    border: 5px solid var(--text-color);
+    border-radius: 20px;
+    background-color: #fff7e0;
+    margin: 5px auto;
+}
+
+.instruction-link {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    color: var(--text-color);
+    font-size: 30px;
+    font-family: "Cabin Sketch";
+}
+
+.notification-show {
+    color: yellow;
+    text-align: center;
+}
+
+.notification-hide {
+    visibility: hidden;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brush-preview {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brush-preview div {
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.brush-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.brush-selector input {
+    margin: 10px 10px 10px 0px;
+}
+
+.brush-selector p,
+.color-selector p,
+.eraser p {
+    padding: 0;
+    margin-right: 10px;
+    color: var(--button-color);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.brush-size-container {
+    display: flex;
+    align-items: center;
+}
+
+.color-and-brush-selector {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    width: 600px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.color-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    align-items: center;
+}
+
+.color-selector input {
+    width: 50px;
+    height: 50px;
+    margin: 1px;
+    padding: 1.5px;
+    border-radius: 50%;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    height: 7px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--text-color);
+    border: 1px solid #bdc3c7;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.eraser {
+    background-color: rgb(209, 128, 142);
+    width: 90px;
+    height: 40px;
+    display: flex;
+    transform: skewX(-20deg);
+    border-radius: 5px;
+    margin-left: 40px;
+}
+
+.eraser p {
+    color: var(--background);
+    margin: auto;
+    transform: skewX(20deg);
+}
+
+.header {
+    width: 100%;
+}
+
+.id-input-and-button {
+    display: flex;
+    align-items: flex-start;
+}
+
+.id-input-and-button input {
+    padding: 10px;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: var(--white);
+    height: 50px;
+    margin: 1px;
+}
+
+.room-left-alert::placeholder {
+    color: blueviolet;
+}
+
+.room-right {
+    border-radius: 0px 20px 20px 0px;
+    width: 140px;
+}
+
+.room-left {
+    border-radius: 20px 0 0 20px;
+    width: 110px;
+}
+
+.save-and-clear-buttons,
+.room-left,
+.room-right {
+    height: 50px;
+}
+
+.save-clear-get-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: auto;
+    overflow: visible;
+}
+
+.save-clear-get-buttons button {
+    margin: 1px;
+}
+
+.title-and-mascot {
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    padding: 40px 80px 20px 80px;
+    color: var(--text-color);
+}
+.title-and-mascot .header-main-text {
+    color: var(--text-color);
+    font-size: 64px;
+    font-family: "Cabin Sketch", cursive;
+    list-style: none;
+    font-weight: bold;
+}
+.title-and-mascot a {
+    color: var(--text-color);
+    text-decoration: none;
+    list-style: none;
+}
+.title-and-mascot .header-main-text:hover {
+    color: var(--button-hover);
+}
+.title-and-mascot .header-tagline {
+    margin-top: -11px;
+    text-align: center;
+}
+.title-and-mascot .header-tagline p {
+    font-size: 16pt !important;
+}
+.title-and-mascot ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-self: center;
+}
+/********************************* MASCOT *********************************/
+.logo {
+    filter: hue-rotate(261deg);
+    /* width: 100px; */
+    width: 60px;
+    margin: 0 20px 0 0;
+}
+
+/********************************* COLOUR CHOICES PANEL *********************************/
+
+.color-choices {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.color-option {
+    width: 50px;
+    height: 50px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+}
+
+.color-option input {
+    border: none;
+}
+
+.color-selector-container {
+    position: relative;
+}
+
+.color-selector-label {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.color1 {
+    background-color: red;
+}
+
+.color2 {
+    background-color: orange;
+}
+
+.color3 {
+    background-color: yellow;
+}
+
+.color4 {
+    background-color: green;
+}
+
+.color5 {
+    background-color: blue;
+}
+
+.color6 {
+    background-color: indigo;
+}
+
+.color7 {
+    background-color: violet;
+}
+
+.color8 {
+    background-color: black;
+}
+
+.color9 {
+    background-color: white;
+}
+
+.color10 {
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
+/********************************* SMALLER SCREENS *********************************/
+@media screen and (max-height: 1000px) {
+    canvas {
+        margin-right: 10px;
+    }
+
+    .brush-selector {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brush-selector input {
+        transform: rotate(270deg);
+        display: flex;
+        margin: 10px 10px 10px 10px;
+    }
+
+    .brush-selector p {
+        margin: auto;
+        margin-bottom: 65px;
+    }
+
+    .brush-selector .brush-preview {
+        margin-top: 65px;
+    }
+
+    .brush-size-container {
+        flex-direction: column;
+    }
+
+    .canvas-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .color-and-brush-selector {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        width: fit-content;
+        margin-top: 20px;
+    }
+
+    .canvas-and-control-panel {
+        display: flex;
+    }
+
+    .color-choices {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .color-selector {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .eraser {
+        margin-left: 0px;
+        margin-top: 40px;
+    }
+
+    .eraser p {
+        margin: auto;
+    }
+
+    .id-input-and-button {
+        width: 250px;
+    }
+
+    .save-button-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .save-clear-get-buttons {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        justify-content: flex-start;
+        margin-top: 3px;
+    }
+
+    .save-clear-get-buttons button {
+        margin-bottom: 5px;
+    }
+
+    .save-and-clear-buttons {
+        width: 250px;
+        margin: 10px;
+    }
+
+    .save-and-clear-buttons button {
+        margin: 10px;
+    }
+
+    .title-and-mascot {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+}

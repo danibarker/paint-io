@@ -15,6 +15,10 @@ function App() {
 
     useEffect(() => {
         let socket = socketIOClient(window.location.href);
+        window.onclose = () => {
+            prompt("Are you sure you want to leave?");
+            socket.emit("leave", roomId);
+        };
         socket.on("connect", () => {
             console.log(`Connected with id: ${socket.id}`);
         });
@@ -34,7 +38,13 @@ function App() {
             ctx.rect(0, 0, canvas.width, canvas.height);
             ctx.fill();
         });
+        socket.on("usersOnline", (usersOnline) => {
+            console.log(usersOnline);
+        });
         setSocketRef(socket);
+        return () => {
+            socket.disconnect();
+        };
     }, []);
 
     return (

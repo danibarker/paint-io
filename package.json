@@ -1,13 +1,18 @@
 {
     "name": "paint-io",
+    "engines": {
+        "node": ">=21.0.0"
+    },
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
         "start": "node back-end/server.js",
-        "install": "npm run install-backend && npm run install-frontend",
-        "install-backend": "cd back-end && npm install && cd ..",
-        "install-frontend": "cd front-end && npm install && cd ..",
+        "dev-server": "nodemon back-end/server.js",
+        "dev-client": "cd front-end && npm run dev",
+        "install": "npm run install-server && npm run install-client",
+        "install-server": "cd back-end && npm install && cd ..",
+        "install-client": "cd front-end && npm install && cd ..",
         "build": "cd front-end && npm run build && cd .."
     },
     "repository": {
