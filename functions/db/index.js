@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 //convert to cloud mongo
-const dbUrl =
-    "mongodb+srv://admin:Z6VW3NNlbWd35fNv@cluster0.tgqfjfm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const dbUrl = process.env.DB_CONNECT || "mongodb://localhost:27017/paintio";
 mongoose.set("strictQuery", false);
 mongoose.connect(dbUrl);
 
