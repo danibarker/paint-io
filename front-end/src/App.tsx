@@ -14,7 +14,12 @@ function App() {
     const [roomId, setRoomId] = useState<string>("");
 
     useEffect(() => {
-        const socket = socketIOClient(window.location.href);
+        console.log(import.meta.env.MODE);
+        const socket = socketIOClient(
+            import.meta.env.MODE === "development"
+                ? window.location.href
+                : "https://us-central1-paint-io-app.cloudfunctions.net/api"
+        );
         window.onclose = () => {
             prompt("Are you sure you want to leave?");
             socket.emit("leave", roomId);
