@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const imageRouter = require("./routes/images");
-const path = require("path");
 const { runWith } = require("firebase-functions");
 require("dotenv").config();
 const server = http.createServer(app);
@@ -39,10 +38,6 @@ io.on("connection", (socket) => {
 });
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../front-end/dist")));
 app.use("/images", imageRouter);
-app.use("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../front-end/dist/index.html"));
-});
 
-exports.api = runWith({ memory: "512MB" }).https.onRequest(app);
+exports.api = runWith({ memory: "512MB" }).https.onRequest(server);
