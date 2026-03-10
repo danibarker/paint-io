@@ -1,39 +1,10 @@
 import convertCanvasToBlob from "../imageutils/canvasToBlob";
+import { useAppContext } from "../provider/useAppContext";
 import { sendImage } from "../requests/posts";
-import { clearCanvas } from "../functions/mouseMove";
 import { useState } from "react";
-import { Socket } from "socket.io-client";
 
-type ControlPanelProps = {
-    canvasRef: React.RefObject<HTMLCanvasElement>;
-    socketRef: Socket | null;
-    roomId: string;
-    setRoomId: (roomId: string) => void;
-};
-
-export function ControlPanel({
-    canvasRef,
-    socketRef,
-    roomId,
-    setRoomId,
-}: ControlPanelProps) {
-    const joinRoom = () => {
-        if (!socketRef) {
-            console.error("Socket not connected");
-            return;
-        }
-        socketRef.emit("join", "hello", roomId);
-        setJoined(true);
-    };
-    const leaveRoom = () => {
-        if (!socketRef) {
-            console.error("Socket not connected");
-            return;
-        }
-        socketRef.emit("leave", roomId);
-        setJoined(false);
-        setRoomId("");
-    };
+export function ControlPanel() {
+    const { canvasRef, clearCanvas, roomId, setRoomId } = useAppContext();
     const displaySavedConfirmation = () => {
         setSavedConfirmationVisible(true);
         setTimeout(() => {
@@ -46,7 +17,7 @@ export function ControlPanel({
             setRoomLeftClass("room-left");
         }, 500);
     };
-    const [joined, setJoined] = useState(false);
+    const [roomIdInput, setRoomIdInput] = useState("");
     const [savedConfirmationVisibile, setSavedConfirmationVisible] =
         useState(false);
     const [roomLeftClass, setRoomLeftClass] = useState("room-left");
@@ -59,6 +30,10 @@ export function ControlPanel({
                 <button
                     className="save-and-clear-buttons"
                     onClick={() => {
+                        if (!canvasRef || !canvasRef.current) {
+                            console.error("Canvas not found");
+                            return;
+                        }
                         const blob = convertCanvasToBlob(canvasRef.current);
                         sendImage(blob);
                         displaySavedConfirmation();
@@ -72,14 +47,12 @@ export function ControlPanel({
             </div>
             <button
                 className="save-and-clear-buttons"
-                onClick={() =>
-                    clearCanvas(canvasRef.current, socketRef, roomId)
-                }
+                onClick={() => clearCanvas()}
             >
                 Clear Canvas
             </button>
             <div className="id-input-and-button">
-                {joined ? (
+                {roomId ? (
                     <button className="room-left" disabled>
                         {roomId}
                     </button>
@@ -87,9 +60,9 @@ export function ControlPanel({
                     <input
                         className={roomLeftClass}
                         placeholder="Enter ID"
-                        value={roomId}
+                        value={roomIdInput}
                         onChange={(e) => {
-                            setRoomId(e.target.value);
+                            setRoomIdInput(e.target.value);
                         }}
                     />
                 )}
@@ -97,14 +70,14 @@ export function ControlPanel({
                 <button
                     className="room-right"
                     onClick={() => {
-                        joined
-                            ? leaveRoom()
-                            : roomId
-                            ? joinRoom()
+                        roomId
+                            ? setRoomId("")
+                            : roomIdInput
+                            ? setRoomId(roomIdInput)
                             : roomLeftAlertVisible();
                     }}
                 >
-                    {joined ? "Leave Room " : "Join Room"}
+                    {roomId ? "Leave Room " : "Join Room"}
                 </button>
             </div>
         </div>

@@ -1,14 +1,7 @@
-const BrushSelector = ({
-    setBrushSize,
-    brushSize,
-    setColor,
-    color,
-}: {
-    setBrushSize: (size: number) => void;
-    brushSize: number;
-    setColor: (color: string) => void;
-    color: string;
-}) => {
+import { useAppContext } from "../provider/useAppContext";
+
+const BrushSelector = () => {
+    const { setBrushSize, brushSize, setColor, color } = useAppContext();
     return (
         <div className="brush-selector">
             <div className="brush-size-container">

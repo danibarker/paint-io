@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-
+import logo from "../assets/paintio.png";
 export function Header() {
     return (
         <div className="header">
             <div className="title-and-mascot">
-                <img className="logo" alt="logo" src="/paintio.png" />
+                <img className="logo" alt="logo" src={logo} />
                 <ul>
                     <Link to="/">
                         <li>

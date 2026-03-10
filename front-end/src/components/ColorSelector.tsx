@@ -1,8 +1,7 @@
-type ColorSelectorProps = {
-    setColor: (color: string) => void;
-};
+import { useAppContext } from "../provider/useAppContext";
 
-const ColorSelector = ({ setColor }: ColorSelectorProps) => {
+const ColorSelector = () => {
+    const { setColor } = useAppContext();
     const selectFromColorCircles = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!(e.target instanceof Element)) return;
         setColor(
